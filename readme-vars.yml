@@ -1,0 +1,47 @@
+---
+
+# project information
+project_name: dogwalk
+project_url: "https://studio.blender.org/projects/dogwalk/"
+project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/dogwalk-logo.png"
+project_blurb: "[DOGWALK]({{ project_url }}) is Blender Studio's long awaited second game project, focused on creating a bite-sized interactive storytelling playground. Play as a big adorable dog and explore the winter woods with a little kid."
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_blurb_optional_extras_enabled: false
+# supported architectures
+available_architectures:
+  - {arch: "{{ arch_x86_64 }}", tag: "latest"}
+# container parameters
+common_param_env_vars_enabled: true
+param_container_name: "{{ project_name }}"
+param_usage_include_vols: true
+param_volumes:
+  - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Users home directory in the container, stores local files and settings"}
+param_usage_include_ports: true
+param_ports:
+  - {external_port: "3000", internal_port: "3000", port_desc: "HTTP DOGWALK desktop gui, must be proxied."}
+  - {external_port: "3001", internal_port: "3001", port_desc: "HTTPS DOGWALK desktop gui."}
+custom_params:
+  - {name: "shm-size", name_compose: "shm_size", value: "1gb", desc: "This is needed for DOGWALK to function properly."}
+# optional variables
+opt_security_opt_param: true
+opt_security_opt_param_vars:
+  - {run_var: "seccomp=unconfined", compose_var: "seccomp:unconfined", desc: "For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker."}
+# Selkies blurb settings
+selkies_blurb: true
+show_nvidia: true
+# application setup block
+app_setup_block_enabled: true
+app_setup_block: |
+  The application can be accessed at:
+
+  * https://yourhost:3001/
+
+  **This game is currently buggy on Linux and this is known, it segfaults when trying to continue or launch a new game for the second time. As a workaround we purge their storage directory on every launch, so saving and continue is not available, hopefully this will be fixed in future versions. Not mashing buttons when the splash screen is loading helps a lot in testing.**
+
+  **This container REQUIRES a GPU, either Nvidia via runtime or Intel/AMD via `--device /dev/dri:/dev/dri` it will not work without one, you will only see a gray screen on launch without one.**
+
+  **Controller input is the best option, but if you lack a controller use gaming mode which will pointer lock your mouse at fullscreen.**
+
+# changelog
+changelogs:
+  - {date: "14.07.25:", desc: "Initial release."}
