@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=DOGWALK
+Icon=dogwalk
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+StartupNotify=true
+Exec=/opt/dogwalk-linux/run.sh
