@@ -26,7 +26,7 @@ RUN \
     unzip && \
   curl -o \
     /tmp/dogwalk.zip -L \
-    "https://studio.blender.org/download-source/files/ba/58/ba589b4453df58958fe3c97eff20df0a-37.zip" && \
+    "https://studio.blender.org/download-source/files/e7/56/e75606adf8b311e4c8a5a28e16a5512a-38.zip" && \
   cd /tmp && \
   unzip dogwalk.zip && \
   mv \

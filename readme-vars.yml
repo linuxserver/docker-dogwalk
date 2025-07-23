@@ -108,4 +108,5 @@ init_diagram: |
   "dogwalk:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "23.07.25:", desc: "Bump DOGWALK to 1.0.2."}
   - {date: "14.07.25:", desc: "Initial release."}
