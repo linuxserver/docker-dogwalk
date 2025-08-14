@@ -26,12 +26,12 @@ RUN \
     unzip && \
   curl -o \
     /tmp/dogwalk.zip -L \
-    "https://studio.blender.org/download-source/files/e7/56/e75606adf8b311e4c8a5a28e16a5512a-38.zip" && \
+    "https://studio.blender.org/download-source/files/48/37/4837f8e4249d2d0a5cb3513f81c4b5ef-38.zip" && \
   cd /tmp && \
   unzip dogwalk.zip && \
   mv \
-    dogwalk-linux \
-    /opt && \
+    dogwalk-linux* \
+    /opt/dogwalk-linux && \
   echo "**** app wrapper ****" && \
   echo "#! /bin/bash" > /opt/dogwalk-linux/run.sh && \
   echo "rm -Rf /config/.local/share/godot" >> /opt/dogwalk-linux/run.sh && \

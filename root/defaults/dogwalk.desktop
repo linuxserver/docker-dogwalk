@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=DOGWALK
-Icon=dogwalk
+Icon=/usr/share/icons/hicolor/192x192/apps/dogwalk.png
 Terminal=false
 X-MultipleArgs=false
 Type=Application
