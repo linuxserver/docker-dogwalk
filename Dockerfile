@@ -30,7 +30,7 @@ RUN \
   cd /tmp && \
   unzip dogwalk.zip && \
   mv \
-    dogwalk-linux* \
+    linux \
     /opt/dogwalk-linux && \
   echo "**** app wrapper ****" && \
   echo "#! /bin/bash" > /opt/dogwalk-linux/run.sh && \
