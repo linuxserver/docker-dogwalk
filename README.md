@@ -597,5 +597,6 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **28.12.25:** - Add Wayland init logic, rebase to Trixie, bump Dogwalk.
 * **23.07.25:** - Bump DOGWALK to 1.0.2.
 * **14.07.25:** - Initial release.

@@ -110,5 +110,6 @@ init_diagram: |
   "dogwalk:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "28.12.25:", desc: "Add Wayland init logic, rebase to Trixie, bump Dogwalk."}
   - {date: "23.07.25:", desc: "Bump DOGWALK to 1.0.2."}
   - {date: "14.07.25:", desc: "Initial release."}

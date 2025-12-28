@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
+FROM ghcr.io/linuxserver/baseimage-selkies:debiantrixie
 
 # set version label
 ARG BUILD_DATE
@@ -28,11 +28,11 @@ RUN \
     unzip && \
   curl -o \
     /tmp/dogwalk.zip -L \
-    "https://studio.blender.org/download-source/files/3f/d3/3fd3ee7fc72a17913271ce5e43a2decd-38.zip" && \
+    "https://studio.blender.org/download-source/files/53/a1/53a1f43049a60060f4e9a73b8d2dfad2-38.zip" && \
   cd /tmp && \
   unzip dogwalk.zip && \
   mv \
-    linux \
+    dogwalk-linux-* \
     /opt/dogwalk-linux && \
   echo "**** app wrapper ****" && \
   echo "#! /bin/bash" > /opt/dogwalk-linux/run.sh && \
